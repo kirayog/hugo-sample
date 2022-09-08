@@ -1,4 +1,5 @@
-baseURL = 'https://kirayog.github.io/hugo-sample/'
+baseURL = '/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
+themesDir = "https://kirayog.io/hugo-sample/ananke"
 theme = "ananke"
