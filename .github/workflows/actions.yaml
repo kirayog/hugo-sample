@@ -1,0 +1,14 @@
+name: inet-actions
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  hugo-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
