@@ -1,4 +1,4 @@
-theme = "ananke"
-baseURL = 'https://kirayog.github.io/'
+baseURL = '/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
+theme = "ananke"
