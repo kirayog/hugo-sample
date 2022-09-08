@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'hugo-sample/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
 themesDir = "themes/"
