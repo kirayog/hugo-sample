@@ -1,0 +1,186 @@
+<!doctype html><html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>ドキュメント更新ハンズオン | My New Hugo Site</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="ゴール  Markdown の基本的な記法が理解できる VS Code Remote Continer 上の Hugo で Markdown を Web サイトコンテンツに変換できる GitHub Action を利用する方法がわかる 【Want】 Hugo の設定を変更して、Web サイトコンテンツをカスタマイズできる  目次  VS Code Remote Container で Hugo を動かしてみよう Markdown でドキュメントを書いてみよう 自由練習１～　好きに Markdown を書いて、Web サイトに記事を追加してみましょう GitHubAction で作業を自動化してみよう 自由練習２ Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう  VS Code Remote Container で Hugo を動かしてみよう VS Code Remote Continer の設定がされた Git リポジトリをクローンして、さっそく Hugo がどんなものなのか体験してみましょう
+(A) Windows端末  WSL2 を起動します（Windowsキーを押下→Ubuntuを入力） Docker を起動しておきます： sudo service docker start 任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ cd を打てばＯＫ） 演習用の GitHub リポジトリを取得します（ git clone --recursive https://github.">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=robots content="noindex, nofollow">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="ドキュメント更新ハンズオン">
+<meta property="og:description" content="ゴール  Markdown の基本的な記法が理解できる VS Code Remote Continer 上の Hugo で Markdown を Web サイトコンテンツに変換できる GitHub Action を利用する方法がわかる 【Want】 Hugo の設定を変更して、Web サイトコンテンツをカスタマイズできる  目次  VS Code Remote Container で Hugo を動かしてみよう Markdown でドキュメントを書いてみよう 自由練習１～　好きに Markdown を書いて、Web サイトに記事を追加してみましょう GitHubAction で作業を自動化してみよう 自由練習２ Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう  VS Code Remote Container で Hugo を動かしてみよう VS Code Remote Continer の設定がされた Git リポジトリをクローンして、さっそく Hugo がどんなものなのか体験してみましょう
+(A) Windows端末  WSL2 を起動します（Windowsキーを押下→Ubuntuを入力） Docker を起動しておきます： sudo service docker start 任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ cd を打てばＯＫ） 演習用の GitHub リポジトリを取得します（ git clone --recursive https://github.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/docs/handson/"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2022-09-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-09-01T00:00:00+00:00">
+<meta itemprop=name content="ドキュメント更新ハンズオン">
+<meta itemprop=description content="ゴール  Markdown の基本的な記法が理解できる VS Code Remote Continer 上の Hugo で Markdown を Web サイトコンテンツに変換できる GitHub Action を利用する方法がわかる 【Want】 Hugo の設定を変更して、Web サイトコンテンツをカスタマイズできる  目次  VS Code Remote Container で Hugo を動かしてみよう Markdown でドキュメントを書いてみよう 自由練習１～　好きに Markdown を書いて、Web サイトに記事を追加してみましょう GitHubAction で作業を自動化してみよう 自由練習２ Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう  VS Code Remote Container で Hugo を動かしてみよう VS Code Remote Continer の設定がされた Git リポジトリをクローンして、さっそく Hugo がどんなものなのか体験してみましょう
+(A) Windows端末  WSL2 を起動します（Windowsキーを押下→Ubuntuを入力） Docker を起動しておきます： sudo service docker start 任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ cd を打てばＯＫ） 演習用の GitHub リポジトリを取得します（ git clone --recursive https://github."><meta itemprop=datePublished content="2022-09-01T00:00:00+00:00">
+<meta itemprop=dateModified content="2022-09-01T00:00:00+00:00">
+<meta itemprop=wordCount content="259">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="ドキュメント更新ハンズオン">
+<meta name=twitter:description content="ゴール  Markdown の基本的な記法が理解できる VS Code Remote Continer 上の Hugo で Markdown を Web サイトコンテンツに変換できる GitHub Action を利用する方法がわかる 【Want】 Hugo の設定を変更して、Web サイトコンテンツをカスタマイズできる  目次  VS Code Remote Container で Hugo を動かしてみよう Markdown でドキュメントを書いてみよう 自由練習１～　好きに Markdown を書いて、Web サイトに記事を追加してみましょう GitHubAction で作業を自動化してみよう 自由練習２ Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう  VS Code Remote Container で Hugo を動かしてみよう VS Code Remote Continer の設定がされた Git リポジトリをクローンして、さっそく Hugo がどんなものなのか体験してみましょう
+(A) Windows端末  WSL2 を起動します（Windowsキーを押下→Ubuntuを入力） Docker を起動しておきます： sudo service docker start 任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ cd を打てばＯＫ） 演習用の GitHub リポジトリを取得します（ git clone --recursive https://github.">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+My New Hugo Site
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/docs/ title="ドキュメントの管理方法 page">
+ドキュメントの管理方法
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+MARKDOWN によるドキュメント管理の紹介
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+</div>
+<h1 class="f1 athelas mt3 mb1">ドキュメント更新ハンズオン</h1>
+<time class="f6 mv4 dib tracked" datetime=2022-09-01T00:00:00Z>September 1, 2022</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id=ゴール>ゴール</h2>
+<ul>
+<li>Markdown の基本的な記法が理解できる</li>
+<li>VS Code Remote Continer 上の Hugo で Markdown を Web サイトコンテンツに変換できる</li>
+<li>GitHub Action を利用する方法がわかる</li>
+<li>【Want】 Hugo の設定を変更して、Web サイトコンテンツをカスタマイズできる</li>
+</ul>
+<h2 id=目次>目次</h2>
+<ol>
+<li>VS Code Remote Container で Hugo を動かしてみよう</li>
+<li>Markdown でドキュメントを書いてみよう</li>
+<li>自由練習１～　好きに Markdown を書いて、Web サイトに記事を追加してみましょう</li>
+<li>GitHubAction で作業を自動化してみよう</li>
+<li>自由練習２</li>
+<li>Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう</li>
+</ol>
+<h2 id=vs-code-remote-container-で-hugo-を動かしてみよう>VS Code Remote Container で Hugo を動かしてみよう</h2>
+<p>VS Code Remote Continer の設定がされた Git リポジトリをクローンして、さっそく Hugo がどんなものなのか体験してみましょう</p>
+<h3 id=a-windows端末>(A) Windows端末</h3>
+<ol>
+<li>WSL2 を起動します（Windowsキーを押下→Ubuntuを入力）</li>
+<li>Docker を起動しておきます： <code>sudo service docker start</code></li>
+<li>任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ <code>cd</code> を打てばＯＫ）</li>
+<li>演習用の GitHub リポジトリを取得します（ <code>git clone --recursive https://github.com/kazuo278/hugo-sample.git</code> ）</li>
+<li><code>cd hugo-sample</code> でリポジトリに移動します</li>
+<li><code>code .</code> で VS Code を起動します(初めて実行する場合はインストールが発生します)</li>
+<li>もし、VSCode を起動した際に信頼するかの警告が出たら「はい、作成者を信頼します」を選択します</li>
+<li>右下に「Folder containes a Dev Container configuration file&mldr;」というポップアップが出たら「Reopen in Container」を選択します</li>
+<li>開発用のコンテナが起動するまで待ちます（初回は時間がかかります）</li>
+<li>上部メニュー＞ターミナル＞新しいターミナルを選択します</li>
+<li>開いたターミナルで <code>hugo server -w</code> のコマンドを実行します</li>
+<li>ブラウザで「<a href=http://localhost:1313/>http://localhost:1313/</a>」を開きます</li>
+<li>md ファイルの１つを更新して保存したときに、すぐにブラウザ側に反映されていることを確認します</li>
+</ol>
+<h3 id=b-mac端末>(B) Mac端末</h3>
+<ol>
+<li>VSCodeを起動します</li>
+<li><code>shift + command + p</code> を押します</li>
+<li><code>shell command</code>を入力し、「Shell Command: Install &lsquo;code&rsquo; command in PATH」を選択します。</li>
+<li>Docker Desktopを起動します。</li>
+<li>ターミナルを開き、任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ <code>cd</code> を打てばＯＫ）</li>
+<li>演習用の GitHub リポジトリを取得します（ <code>git clone --recursive https://github.com/kazuo278/hugo-sample.git</code> ）</li>
+<li><code>cd hugo-sample</code> でリポジトリに移動します</li>
+<li><code>code .</code> で VS Code を起動します<br>
+うまくいかない場合は、VSCodeの「File -> Open Folder」から取得したリポジトリを選択してください。</li>
+<li>もし、VSCode を起動した際に信頼するかの警告が出たら「はい、作成者を信頼します」を選択します</li>
+<li>右下に「Folder containes a Dev Container configuration file&mldr;」というポップアップが出たら「Reopen in Container」を選択します</li>
+<li>開発用のコンテナが起動するまで待ちます（初回は時間がかかります）</li>
+<li>上部メニュー＞ターミナル＞新しいターミナルを選択します(<code>ctrl + shift + @</code> でも可)</li>
+<li>開いたターミナルで <code>hugo server -w</code> のコマンドを実行します</li>
+<li>ブラウザで「<a href=http://localhost:1313/>http://localhost:1313/</a>」を開きます</li>
+<li>md ファイルの１つを更新して保存したときに、すぐにブラウザ側に反映されていることを確認します</li>
+</ol>
+<h2 id=markdwon-でドキュメントを書いてみよう>Markdwon でドキュメントを書いてみよう</h2>
+<p><a href=https://qiita.com/tbpgr/items/989c6badefff69377da7>Markdown記法 サンプル集</a> を参考にさせてもらいながら、 Markdown の記述方法を学びましょう</p>
+<p>＋α で Hugo の記事を作成する際に必要になる「メタデータ」の記載方法は以下のようになります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>---
+title: &#34;タイトル名を書きます&#34;
+date: 2022-09-08
+---
+ドキュメントの冒頭に&#34;---&#34;で囲んだ範囲に、yaml形式(ざっくりいうとパラメータと値を : で区切って表現する形式)でメタ情報を記載します！
+</code></pre></div><h2 id=自由練習１好きに-markdown-を書いてweb-サイトに記事を追加してみましょう>自由練習１：好きに Markdown を書いて、Web サイトに記事を追加してみましょう</h2>
+<ol>
+<li>拡張子.mdでファイルを新規に作成します。</li>
+<li>冒頭に title と date のメタデータを書いて保存します。</li>
+<li>ブラウザで「<a href=http://localhost:1313/>http://localhost:1313/</a>」を開いて記事が追加されていることを確認します</li>
+<li>あとは自由に Markdown で記事を書いてみてください</li>
+</ol>
+<h2 id=githubaction-で作業を自動化してみよう>GitHubAction で作業を自動化してみよう</h2>
+<p><a href=https://qiita.com/Teach/items/d2c4d7bec98228df1807>Qiita GitHub ActionsでHello World</a>を参考にさせてもらいながら、GitHub Actionsを動かしてみましょう。</p>
+<ul>
+<li>参考：
+<ul>
+<li><a href=https://docs.github.com/ja/actions/learn-github-actions/understanding-github-actions>GitHub Actionsについて学ぶ</a></li>
+<li><a href=https://docs.github.com/ja/actions/using-workflows/workflow-syntax-for-github-actions>GitHub Actionsのワークフロー構文</a></li>
+<li><a href="https://github.com/marketplace?type=actions">GitHub Marketplace</a></li>
+</ul>
+</li>
+</ul>
+<h2 id=自由練習２任意のブランチにpush時にソースコードを取得checkoutするactionsを呼び好きなlinuxコマンドを実行させてみよう>自由練習２：任意のブランチにPush時にソースコードを取得(checkout)するActionsを呼び、好きなLinuxコマンドを実行させてみよう</h2>
+<ol>
+<li>
+<p><code>helloworld.yml</code>の<code>on</code>以下を変更します</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>on</span>:
+  - <span style=color:#ae81ff>workflow_dispatch</span>
+  - <span style=color:#ae81ff>&lt;ブランチPushイベント&gt;</span>
+</code></pre></div><p>参考：<a href=https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows>ワークフローをトリガーするイベント</a></p>
+</li>
+<li>
+<p>&lsquo;steps&rsquo;以下を自由に変更します</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>steps</span>:
+  - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>echo &#34;Hello World!&#34;</span>
+  - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>&lt;アクション&gt;</span>
+    <span style=color:#f92672>with</span>: <span style=color:#ae81ff>&lt;呼び出すアクションに応じて指定する&gt;</span>
+  - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>&lt;好きなlinuxコマンド&gt;</span>
+</code></pre></div></li>
+</ol>
+<h2 id=hugo-の設定を変更してweb-サイトコンテンツをカスタマイズしてみよう>Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう</h2>
+<ul>
+<li>Hugo の設定ファイルを変更してみよう（<a href=https://www.docsy.dev/docs/get-started/basic-configuration/>参考</a> ）</li>
+<li>layouts にファイルを作成して theme を上書きしてみよう（<a href=https://ja.takp.me/posts/how-to-customize-the-hugo-themes/>参考</a>）</li>
+</ul>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=/>
+&copy; My New Hugo Site 2022
+</a>
+<div>
+<div class=ananke-socials>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html><html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Document for Git | My New Hugo Site</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="GitによるDocumentの管理のすゝめ 従来のドキュメント管理の方法 こんなドキュメント管理してませんか？   日付ごとのフォルダで管理 同じ資料を色々な場所に配置  このような管理では…  (最新の)資料がどこにあるか探しにくい！ 前回との差分が何か分かりにくい！  そこで、Gitによるドキュメント管理はいかがでしょうか。
+ Gitによるドキュメント管理とは…? Markdown形式で記載したドキュメントをGitリポジトリで管理すること
+Gitとは…? チーム開発における同時更新を防ぐために、ソースコードなどの変更履歴を記録するバージョン管理システム。
+ 管理対象リソースは、リモートリポジトリと呼ばれる場所に保管される。 編集時、開発(編集)者はリモートリポジトリの複製(ローカルリポジトリ)を作成し、ローカルリポジトリを更新する。 作業完了後、開発(編集)者はローカルリポジトリの内容をリモートリポジトリに反映する。   Gitでできること   ファイルの変更履歴(更新日、更新者、更新箇所)管理
+ 過去の状態に簡単に戻せる。 差分がわかりやすい。    プル(マージ)リクエストによるレビュー
+   従来のドキュメント管理の課題解決   (最新の)資料がどこにあるか探しにくい！
+→ ファイルが一元管理されるので、いつも同じ場所に最新の資料がある！
+  前回との差分が何か分かりにくい！
+→ 変更履歴が残るので更新差分が分かりやすい！ → レビューの仕組みがあるので差分に対しコメントしやすい！
+  Gitリモートリポジトリ、Gitコマンド、エディタ(VSCodeがおすすめ)があれば作成可能！
+リモートリポジトリはMarkdwon形式で書かれたドキュメントをHTMLに変換し描画することができるため、ドキュメントはMarkdown記法で作成する。
+  Gitによるドキュメント管理方法 ~レビュー機能(MR,PR)活用~ ■ ブランチ戦略例
+    ブランチ名 役割     master/main 常にレビュー済みの最新のドキュメントを管理するブランチ。   feature 個別の作業を行うブランチ。コンテンツや章などの単位で作成する。    Gitによるドキュメント管理への疑念 Gitでドキュメント管理できることは分かったけど…">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=robots content="noindex, nofollow">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="Document for Git">
+<meta property="og:description" content="GitによるDocumentの管理のすゝめ 従来のドキュメント管理の方法 こんなドキュメント管理してませんか？   日付ごとのフォルダで管理 同じ資料を色々な場所に配置  このような管理では…  (最新の)資料がどこにあるか探しにくい！ 前回との差分が何か分かりにくい！  そこで、Gitによるドキュメント管理はいかがでしょうか。
+ Gitによるドキュメント管理とは…? Markdown形式で記載したドキュメントをGitリポジトリで管理すること
+Gitとは…? チーム開発における同時更新を防ぐために、ソースコードなどの変更履歴を記録するバージョン管理システム。
+ 管理対象リソースは、リモートリポジトリと呼ばれる場所に保管される。 編集時、開発(編集)者はリモートリポジトリの複製(ローカルリポジトリ)を作成し、ローカルリポジトリを更新する。 作業完了後、開発(編集)者はローカルリポジトリの内容をリモートリポジトリに反映する。   Gitでできること   ファイルの変更履歴(更新日、更新者、更新箇所)管理
+ 過去の状態に簡単に戻せる。 差分がわかりやすい。    プル(マージ)リクエストによるレビュー
+   従来のドキュメント管理の課題解決   (最新の)資料がどこにあるか探しにくい！
+→ ファイルが一元管理されるので、いつも同じ場所に最新の資料がある！
+  前回との差分が何か分かりにくい！
+→ 変更履歴が残るので更新差分が分かりやすい！ → レビューの仕組みがあるので差分に対しコメントしやすい！
+  Gitリモートリポジトリ、Gitコマンド、エディタ(VSCodeがおすすめ)があれば作成可能！
+リモートリポジトリはMarkdwon形式で書かれたドキュメントをHTMLに変換し描画することができるため、ドキュメントはMarkdown記法で作成する。
+  Gitによるドキュメント管理方法 ~レビュー機能(MR,PR)活用~ ■ ブランチ戦略例
+    ブランチ名 役割     master/main 常にレビュー済みの最新のドキュメントを管理するブランチ。   feature 個別の作業を行うブランチ。コンテンツや章などの単位で作成する。    Gitによるドキュメント管理への疑念 Gitでドキュメント管理できることは分かったけど…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/docs/document-for-git/"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2022-09-02T05:42:11+00:00">
+<meta property="article:modified_time" content="2022-09-02T05:42:11+00:00">
+<meta itemprop=name content="Document for Git">
+<meta itemprop=description content="GitによるDocumentの管理のすゝめ 従来のドキュメント管理の方法 こんなドキュメント管理してませんか？   日付ごとのフォルダで管理 同じ資料を色々な場所に配置  このような管理では…  (最新の)資料がどこにあるか探しにくい！ 前回との差分が何か分かりにくい！  そこで、Gitによるドキュメント管理はいかがでしょうか。
+ Gitによるドキュメント管理とは…? Markdown形式で記載したドキュメントをGitリポジトリで管理すること
+Gitとは…? チーム開発における同時更新を防ぐために、ソースコードなどの変更履歴を記録するバージョン管理システム。
+ 管理対象リソースは、リモートリポジトリと呼ばれる場所に保管される。 編集時、開発(編集)者はリモートリポジトリの複製(ローカルリポジトリ)を作成し、ローカルリポジトリを更新する。 作業完了後、開発(編集)者はローカルリポジトリの内容をリモートリポジトリに反映する。   Gitでできること   ファイルの変更履歴(更新日、更新者、更新箇所)管理
+ 過去の状態に簡単に戻せる。 差分がわかりやすい。    プル(マージ)リクエストによるレビュー
+   従来のドキュメント管理の課題解決   (最新の)資料がどこにあるか探しにくい！
+→ ファイルが一元管理されるので、いつも同じ場所に最新の資料がある！
+  前回との差分が何か分かりにくい！
+→ 変更履歴が残るので更新差分が分かりやすい！ → レビューの仕組みがあるので差分に対しコメントしやすい！
+  Gitリモートリポジトリ、Gitコマンド、エディタ(VSCodeがおすすめ)があれば作成可能！
+リモートリポジトリはMarkdwon形式で書かれたドキュメントをHTMLに変換し描画することができるため、ドキュメントはMarkdown記法で作成する。
+  Gitによるドキュメント管理方法 ~レビュー機能(MR,PR)活用~ ■ ブランチ戦略例
+    ブランチ名 役割     master/main 常にレビュー済みの最新のドキュメントを管理するブランチ。   feature 個別の作業を行うブランチ。コンテンツや章などの単位で作成する。    Gitによるドキュメント管理への疑念 Gitでドキュメント管理できることは分かったけど…"><meta itemprop=datePublished content="2022-09-02T05:42:11+00:00">
+<meta itemprop=dateModified content="2022-09-02T05:42:11+00:00">
+<meta itemprop=wordCount content="75">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Document for Git">
+<meta name=twitter:description content="GitによるDocumentの管理のすゝめ 従来のドキュメント管理の方法 こんなドキュメント管理してませんか？   日付ごとのフォルダで管理 同じ資料を色々な場所に配置  このような管理では…  (最新の)資料がどこにあるか探しにくい！ 前回との差分が何か分かりにくい！  そこで、Gitによるドキュメント管理はいかがでしょうか。
+ Gitによるドキュメント管理とは…? Markdown形式で記載したドキュメントをGitリポジトリで管理すること
+Gitとは…? チーム開発における同時更新を防ぐために、ソースコードなどの変更履歴を記録するバージョン管理システム。
+ 管理対象リソースは、リモートリポジトリと呼ばれる場所に保管される。 編集時、開発(編集)者はリモートリポジトリの複製(ローカルリポジトリ)を作成し、ローカルリポジトリを更新する。 作業完了後、開発(編集)者はローカルリポジトリの内容をリモートリポジトリに反映する。   Gitでできること   ファイルの変更履歴(更新日、更新者、更新箇所)管理
+ 過去の状態に簡単に戻せる。 差分がわかりやすい。    プル(マージ)リクエストによるレビュー
+   従来のドキュメント管理の課題解決   (最新の)資料がどこにあるか探しにくい！
+→ ファイルが一元管理されるので、いつも同じ場所に最新の資料がある！
+  前回との差分が何か分かりにくい！
+→ 変更履歴が残るので更新差分が分かりやすい！ → レビューの仕組みがあるので差分に対しコメントしやすい！
+  Gitリモートリポジトリ、Gitコマンド、エディタ(VSCodeがおすすめ)があれば作成可能！
+リモートリポジトリはMarkdwon形式で書かれたドキュメントをHTMLに変換し描画することができるため、ドキュメントはMarkdown記法で作成する。
+  Gitによるドキュメント管理方法 ~レビュー機能(MR,PR)活用~ ■ ブランチ戦略例
+    ブランチ名 役割     master/main 常にレビュー済みの最新のドキュメントを管理するブランチ。   feature 個別の作業を行うブランチ。コンテンツや章などの単位で作成する。    Gitによるドキュメント管理への疑念 Gitでドキュメント管理できることは分かったけど…">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+My New Hugo Site
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/docs/ title="ドキュメントの管理方法 page">
+ドキュメントの管理方法
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+MARKDOWN によるドキュメント管理の紹介
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+</div>
+<h1 class="f1 athelas mt3 mb1">Document for Git</h1>
+<time class="f6 mv4 dib tracked" datetime=2022-09-02T05:42:11Z>September 2, 2022</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id=gitによるdocumentの管理のすゝめ>GitによるDocumentの管理のすゝめ</h1>
+<h2 id=従来のドキュメント管理の方法>従来のドキュメント管理の方法</h2>
+<h3 id=こんなドキュメント管理してませんか>こんなドキュメント管理してませんか？</h3>
+<figure><img src=/images/folder.drawio.svg alt=従来のドキュメント管理>
+</figure>
+<ul>
+<li>日付ごとのフォルダで管理</li>
+<li>同じ資料を色々な場所に配置</li>
+</ul>
+<h3 id=このような管理では>このような管理では…</h3>
+<ul>
+<li><strong>(最新の)資料がどこにあるか探しにくい！</strong></li>
+<li><strong>前回との差分が何か分かりにくい！</strong></li>
+</ul>
+<p><strong>そこで、Gitによるドキュメント管理はいかがでしょうか。</strong></p>
+<hr>
+<h2 id=gitによるドキュメント管理とは>Gitによるドキュメント管理とは…?</h2>
+<p><strong>Markdown形式で記載したドキュメントをGitリポジトリで管理すること</strong></p>
+<h3 id=gitとは>Gitとは…?</h3>
+<p>チーム開発における同時更新を防ぐために、ソースコードなどの変更履歴を記録するバージョン管理システム。</p>
+<ul>
+<li>管理対象リソースは、<strong>リモートリポジトリ</strong>と呼ばれる場所に保管される。</li>
+<li><strong>編集時</strong>、開発(編集)者はリモートリポジトリの複製(ローカルリポジトリ)を作成し、<strong>ローカルリポジトリを更新する</strong>。</li>
+<li><strong>作業完了後</strong>、開発(編集)者はローカルリポジトリの内容を<strong>リモートリポジトリに反映する</strong>。</li>
+</ul>
+<figure><img src=/images/git.drawio.svg alt=git>
+</figure>
+<h3 id=gitでできること>Gitでできること</h3>
+<ul>
+<li>
+<p>ファイルの変更履歴(更新日、更新者、更新箇所)管理</p>
+<ul>
+<li>過去の状態に簡単に戻せる。</li>
+<li>差分がわかりやすい。</li>
+</ul>
+</li>
+<li>
+<p>プル(マージ)リクエストによるレビュー</p>
+</li>
+</ul>
+<figure><img src=/images/git_tools.drawio.png alt="git pr">
+</figure>
+<h3 id=従来のドキュメント管理の課題解決>従来のドキュメント管理の課題解決</h3>
+<ul>
+<li>
+<p>(最新の)資料がどこにあるか探しにくい！<br>
+→ <strong>ファイルが一元管理されるので、いつも同じ場所に最新の資料がある！</strong></p>
+</li>
+<li>
+<p>前回との差分が何か分かりにくい！<br>
+→ <strong>変更履歴が残るので更新差分が分かりやすい！</strong>
+→ <strong>レビューの仕組みがあるので差分に対しコメントしやすい！</strong></p>
+</li>
+</ul>
+<p><strong>Gitリモートリポジトリ</strong>、<strong>Gitコマンド</strong>、<strong>エディタ</strong>(VSCodeがおすすめ)があれば作成可能！</p>
+<p>リモートリポジトリは<strong>Markdwon</strong>形式で書かれたドキュメントをHTMLに変換し描画することができるため、ドキュメントは<strong>Markdown記法で作成</strong>する。</p>
+<figure><img src=/images/md.drawio.png alt=markdown>
+</figure>
+<hr>
+<h2 id=gitによるドキュメント管理方法-レビュー機能mrpr活用>Gitによるドキュメント管理方法 ~レビュー機能(MR,PR)活用~</h2>
+<p>■ ブランチ戦略例</p>
+<figure><img src=/images/branch_strategy_github-flow.drawio.svg alt="git branch strategy">
+</figure>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>ブランチ名</th>
+<th style=text-align:left>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>master/main</td>
+<td style=text-align:left>常にレビュー済みの最新のドキュメントを管理するブランチ。</td>
+</tr>
+<tr>
+<td style=text-align:left>feature</td>
+<td style=text-align:left>個別の作業を行うブランチ。コンテンツや章などの単位で作成する。</td>
+</tr>
+</tbody>
+</table>
+<h2 id=gitによるドキュメント管理への疑念>Gitによるドキュメント管理への疑念</h2>
+<p>Gitでドキュメント管理できることは分かったけど…</p>
+<ul>
+<li>
+<p><strong>画像の作成や編集はできないんでしょう…？</strong></p>
+<ul>
+<li>markdownでは、jpgやpng, svgといった画像形式を描画できるけど、
+画像自体は別のツールで作ってmarkdownで表示するんでしょ…めんどくさそう。</li>
+</ul>
+</li>
+<li>
+<p><strong>スライドで発表する場合は向いてなくない…？</strong></p>
+<ul>
+<li>markdownで書いても、発表時にはpowerpointで作成し直すの大変そう</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id=gitによるドキュメント管理への疑念-画像作成編集>Gitによるドキュメント管理への疑念 ~画像作成・編集~</h2>
+<p>VSCodeには、<code>Draw.io Integration</code>という拡張機能が用意されており、<strong>VSCodeから直接の画像作成・編集可能</strong>です！</p>
+<p>また、これにより<strong>画像データもバージョン管理可能</strong>に！
+(パワポだと画像が図として保存されている場合があったりする…)</p>
+<figure><img src=/images/drawio.drawio.png alt=drawio>
+</figure>
+<hr>
+<h2 id=gitによるドキュメント管理への疑念-スライド作成>Gitによるドキュメント管理への疑念 ~スライド作成~</h2>
+<p>VSCodeには、<code>Marp for VS Code</code>という拡張機能が用意されており、Markdownで記載されたドキュメントをスライド(pdf)に変換です！</p>
+<figure><img src=/images/marp.drawio.png alt=height:295>
+</figure>
+<p>ただし、Powerpointのように<strong>画像や文字を直観的に配置できない</strong>など課題もあります。
+→<strong>スライドを作成することが目的な場合やリッチなスライドの作成には向いていなそう</strong>。</p>
+<h2 id=最後に>最後に</h2>
+<h3 id=gitによるドキュメント管理>Gitによるドキュメント管理</h3>
+<ul>
+<li>Markdownで作成したDocumentをGitリポジトリで管理する。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>メリット</th>
+<th style=text-align:left>デメリット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>・いつも同じ場所に最新の資料がある・レビューがしやすい</td>
+<td style=text-align:left>・パワポやその他形式への変換はまだまだ難しい</td>
+</tr>
+</tbody>
+</table>
+<h3 id=私が考えるgitドキュメント管理の使いどころ>私が考えるGitドキュメント管理の使いどころ</h3>
+<p>すべてのドキュメントをGit管理するのではなく、まずは <strong>テンプレート指定のない内部向け文書(運用手順書、システム構成)</strong> からGitでのドキュメント管理を初めてみてはいかがでしょうか。</p>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=/>
+&copy; My New Hugo Site 2022
+</a>
+<div>
+<div class=ananke-socials>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
