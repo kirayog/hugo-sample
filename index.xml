@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 02 Sep 2022 05:42:11 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>What Is Markdown</title><link>/docs/what_is_markdown/</link><pubDate>Fri, 08 Jul 2022 05:01:41 +0000</pubDate><guid>/docs/what_is_markdown/</guid><description>Markdownとは？ Markdownは、プレーンテキストテキストドキュメントに書式設定要素を追加するために使用できる軽量マークアップ言語です。 現在、世界で最も人気のあるマークアップ言語の1つです。
+なぜMarkdownを使うのか？ 人々がMarkdownを使用する理由はいくつかあります。
+マークダウンはすべてに使用できます。人々はそれを使用して、Webサイト、ドキュメント、メモ、書籍、プレゼンテーション、電子メールメッセージ、および技術ドキュメントを作成します。
+Markdownはポータブルです。マークダウン形式のテキストを含むファイルは、事実上すべてのアプリケーションを使用して開くことができます。現在使用しているMarkdownアプリケーションが気に入らない場合は、Markdownファイルを別のMarkdownアプリケーションにインポートできます。これは、コンテンツを独自のファイル形式にロックするMicrosoftWordのようなワードプロセッシングアプリケーションとはまったく対照的です。
+Markdownはプラットフォームに依存しません。任意のオペレーティングシステムを実行している任意のデバイスで、マークダウン形式のテキストを作成できます。
+値下げは将来の保証です。使用しているアプリケーションが将来的に機能しなくなった場合でも、テキスト編集アプリケーションを使用して、マークダウン形式のテキストを読み取ることができます。これは、本、大学の論文、および無期限に保存する必要があるその他のマイルストーンドキュメントに関して重要な考慮事項です。
+値下げはいたるところにあります。RedditやGitHubなどのWebサイトはMarkdownをサポートしており、多くのデスクトップおよびWebベースのアプリケーションがMarkdownをサポートしています。</description></item><item><title>Document for Git</title><link>/docs/document-for-git/</link><pubDate>Fri, 02 Sep 2022 05:42:11 +0000</pubDate><guid>/docs/document-for-git/</guid><description>GitによるDocumentの管理のすゝめ 従来のドキュメント管理の方法 こんなドキュメント管理してませんか？ 日付ごとのフォルダで管理 同じ資料を色々な場所に配置 このような管理では… (最新の)資料がどこにあるか探しにくい！ 前回との差分が何か分かりにくい！ そこで、Gitによるドキュメント管理はいかがでしょうか。
+Gitによるドキュメント管理とは…? Markdown形式で記載したドキュメントをGitリポジトリで管理すること
+Gitとは…? チーム開発における同時更新を防ぐために、ソースコードなどの変更履歴を記録するバージョン管理システム。
+管理対象リソースは、リモートリポジトリと呼ばれる場所に保管される。 編集時、開発(編集)者はリモートリポジトリの複製(ローカルリポジトリ)を作成し、ローカルリポジトリを更新する。 作業完了後、開発(編集)者はローカルリポジトリの内容をリモートリポジトリに反映する。 Gitでできること ファイルの変更履歴(更新日、更新者、更新箇所)管理
+過去の状態に簡単に戻せる。 差分がわかりやすい。 プル(マージ)リクエストによるレビュー
+従来のドキュメント管理の課題解決 (最新の)資料がどこにあるか探しにくい！
+→ ファイルが一元管理されるので、いつも同じ場所に最新の資料がある！
+前回との差分が何か分かりにくい！
+→ 変更履歴が残るので更新差分が分かりやすい！ → レビューの仕組みがあるので差分に対しコメントしやすい！
+Gitリモートリポジトリ、Gitコマンド、エディタ(VSCodeがおすすめ)があれば作成可能！
+リモートリポジトリはMarkdwon形式で書かれたドキュメントをHTMLに変換し描画することができるため、ドキュメントはMarkdown記法で作成する。
+Gitによるドキュメント管理方法 ~レビュー機能(MR,PR)活用~ ■ ブランチ戦略例
+ブランチ名 役割 master/main 常にレビュー済みの最新のドキュメントを管理するブランチ。 feature 個別の作業を行うブランチ。コンテンツや章などの単位で作成する。 Gitによるドキュメント管理への疑念 Gitでドキュメント管理できることは分かったけど…</description></item><item><title>ドキュメント更新ハンズオン</title><link>/docs/handson/</link><pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate><guid>/docs/handson/</guid><description>ゴール Markdown の基本的な記法が理解できる VS Code Remote Continer 上の Hugo で Markdown を Web サイトコンテンツに変換できる GitHub Action を利用する方法がわかる 【Want】 Hugo の設定を変更して、Web サイトコンテンツをカスタマイズできる 目次 VS Code Remote Container で Hugo を動かしてみよう Markdown でドキュメントを書いてみよう 自由練習１～　好きに Markdown を書いて、Web サイトに記事を追加してみましょう GitHubAction で作業を自動化してみよう 自由練習２ Hugo の設定を変更して、Web サイトコンテンツをカスタマイズしてみよう VS Code Remote Container で Hugo を動かしてみよう VS Code Remote Continer の設定がされた Git リポジトリをクローンして、さっそく Hugo がどんなものなのか体験してみましょう
+(A) Windows端末 WSL2 を起動します（Windowsキーを押下→Ubuntuを入力） Docker を起動しておきます： sudo service docker start 任意の作業用のフォルダに移動します（例：ホームディレクトリでよければ cd を打てばＯＫ） 演習用の GitHub リポジトリを取得します（ git clone --recursive https://github.</description></item></channel></rss>
