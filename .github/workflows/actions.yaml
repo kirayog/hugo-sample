@@ -23,7 +23,7 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify --baseURL "https://kirayog.github.io/hugo-sample/"
+        run: hugo --config release_config.toml --minify
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
