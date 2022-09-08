@@ -1,5 +1,5 @@
 baseURL = '/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
-themesDir = "https://kirayog.io/hugo-sample/themes/"
+themesDir = "themes/"
 theme = "ananke"
