@@ -2,3 +2,4 @@ baseURL = '/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
 theme = "ananke"
+canonifyurls = true

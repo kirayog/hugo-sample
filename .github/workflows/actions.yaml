@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - 'ozaki-develop'
+      - 'main'
 
 jobs:
   hugo-deploy:
